@@ -1,0 +1,148 @@
+
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Documentation Guide</title>
+<style>
+body{margin:0;font:16px/1.6 system-ui;background:#fafafa;color:#222;display:flex}
+nav{width:250px;position:sticky;top:0;height:100vh;background:#fff;border-right:1px solid #ddd;padding:20px;overflow:auto}
+main{flex:1;max-width:900px;padding:40px;margin:auto}
+a{text-decoration:none;color:#444;display:block;padding:6px 0}
+section{margin:60px 0}
+pre{
+    background:#f6f7f9;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:22px;
+    padding-top:46px; /* room for icon */
+    overflow:auto;
+    position:relative;
+    margin:18px 0;
+}
+
+pre code{
+    display:block;
+    white-space:pre;
+    font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+    font-size:14px;
+    line-height:1.55;
+}
+
+.copy{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    border-radius:8px;
+    background:#fff;
+    border:1px solid #ddd;
+    cursor:pointer;
+    transition:.2s;
+    padding:0;
+}
+
+.copy:hover{
+    background:#f3f4f6;
+    transform:scale(1.05);
+}
+
+.copy svg{
+    width:18px;
+    height:18px;
+    fill:#666;
+}
+button.copy{position:absolute;right:10px;top:10px}
+h1,h2{scroll-margin-top:20px}
+input{width:100%;padding:8px}
+.card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}
+</style></head><body>
+<nav>
+<h2>Docs</h2>
+<input id="q" placeholder="Search...">
+<a href="#intro">Introduction</a>
+<a href="#quick">Quick Start</a>
+<a href="#settings">SETTINGS</a>
+<a href="#content">CONTENT</a>
+<a href="#types">Content Types</a>
+<a href="#example">Complete Example</a>
+<a href="#tips">Tips</a>
+</nav>
+<main id="main">
+<section id="intro"><h1>Documentation Guide</h1>
+<p>This template lets you build documentation pages using two JavaScript objects: <code>SETTINGS</code> and <code>CONTENT</code>.</p>
+<div class="card"><b>Features</b><ul><li>Background customization</li><li>Optional disclaimer</li><li>Headers, text, images, embeds, slideshows</li></ul></div>
+</section>
+<section id="quick"><h2>Quick Start</h2>
+<ol><li>Open the HTML file.</li><li>Edit <code>SETTINGS</code>.</li><li>Add objects to <code>CONTENT</code>.</li><li>Save and refresh.</li></ol></section>
+<section id="settings"><h2>SETTINGS</h2>
+<pre><button class="copy" title="Copy code">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/>
+</svg>
+</button><code>const SETTINGS={
+ background:"#ffffff",
+ disclaimer:{
+  enabled:true,
+  title:"Disclaimer",
+  description:"Message",
+  titleColor:"#ff4444",
+  buttonColor:"#4CAF50",
+  buttonText:"OK"
+ }
+};</code></pre>
+<p><b>background</b>: CSS background value.</p>
+<p><b>disclaimer.enabled</b>: Shows or hides the popup.</p>
+</section>
+<section id="content"><h2>CONTENT</h2>
+<p>CONTENT is an array. Each object represents one section.</p>
+<pre><button class="copy" title="Copy code">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/>
+</svg>
+</button><code>const CONTENT=[];</code></pre>
+</section>
+<section id="types"><h2>Supported Types</h2>
+<h3>Header</h3><pre><button class="copy" title="Copy code">
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/>
+</svg>
+</button><code>{type:"header",text:"Welcome",color:"#06f"}</code></pre>
+<h3>Text</h3><pre><button class="copy" title="Copy code"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/> </svg> </button><code>{type:"text",text:"Paragraph",color:"#333"}</code></pre>
+<h3>Image</h3><pre><button class="copy" title="Copy code"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/> </svg> </button><code>{type:"image",src:"photo.png",caption:"Caption",color:"#666"}</code></pre>
+<h3>Embed</h3><pre><button class="copy" title="Copy code"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/> </svg> </button><code>{type:"embed",html:`&lt;iframe src="https://example.com"&gt;&lt;/iframe&gt;`}</code></pre>
+<h3>Slideshow</h3><pre><button class="copy" title="Copy code"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/> </svg> </button><code>{type:"slideshow",images:["1.png","2.png"]}</code></pre>
+</section>
+<section id="example"><h2>Build Your First Page</h2>
+<pre><button class="copy" title="Copy code"> <svg viewBox="0 0 24 24" aria-hidden="true"> <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/> </svg> </button><code>const CONTENT=[
+{type:"header",text:"My Website",color:"#0066ff"},
+{type:"text",text:"Welcome!",color:"#222"},
+{type:"image",src:"banner.png",caption:"Banner"},
+{type:"slideshow",images:["1.png","2.png","3.png"]}
+];</code></pre>
+</section>
+<section id="tips"><h2>Tips</h2><ul><li>Never forget to add "," after every ]} except the very last one.</li><li>Embed custom HTML with <code>embed</code> and keep your JS out of the embed but at the very end of &lt;/script&gt;.</li><li>Keep image sizes optimized.</li></ul></section>
+</main>
+<script>
+document.querySelectorAll(".copy").forEach(btn=>{
+    btn.onclick=async()=>{
+        await navigator.clipboard.writeText(
+            btn.nextElementSibling.innerText
+        );
+
+        btn.innerHTML="✓";
+
+        setTimeout(()=>{
+            btn.innerHTML=`
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/>
+            </svg>`;
+        },1200);
+    };
+});
+q.oninput=()=>{let t=q.value.toLowerCase();document.querySelectorAll("main section").forEach(s=>s.style.display=s.innerText.toLowerCase().includes(t)?"":"none")}
+</script>
+</body></html>
